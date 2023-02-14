@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+
+class post 
+{
+    private static $blog_posts = [
+        [
+            "title" => "judul Post Pertama",
+            "slug" =>"judul-post-pertama",
+            "author" =>"Silfina Fajrina",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eius mollitia repudiandae quod modi error recusandae alias tenetur itaque et eum tempore cum praesentium nostrum repellat, laborum vero, quis nesciunt doloremque vel ex nisi provident, totam temporibus? Ducimus dolor voluptatibus eaque veritatis, molestias ab deleniti unde, adipisci, tempore totam ut quisquam ipsa accusamus odit impedit incidunt rem temporibus? Possimus fugit reprehenderit pariatur, non, magnam praesentium tempora quaerat quo incidunt labore dolorum? Fugiat inventore odit quibusdam dignissimos nobis ratione eaque quasi."
+        ],
+        [
+            "title" => "judul Post Kedua",
+            "slug" => "judul-post-kedua",
+            "author" =>"Caca",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eius mollitia repudiandae quod modi error recusandae alias tenetur itaque et eum tempore cum praesentium nostrum repellat, laborum vero, quis nesciunt doloremque vel ex nisi provident, totam temporibus? Ducimus dolor voluptatibus eaque veritatis, molestias ab deleniti unde, adipisci, tempore totam ut quisquam ipsa accusamus odit impedit incidunt rem temporibus? Possimus fugit reprehenderit pariatur, non, magnam praesentium tempora quaerat quo incidunt labore dolorum? Fugiat inventore odit quibusdam dignissimos nobis ratione eaque quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolores accusantium voluptate accusamus quos ullam iusto assumenda ab rerum? Id."
+        ],
+    ];
+
+    public static function all()
+    {
+        return collect(self::$blog_posts);
+    }
+    public static function find($slug)
+    {
+        $posts = static::all();
+            return $posts->firstWhere('slug', $slug);
+    }
+
+}
